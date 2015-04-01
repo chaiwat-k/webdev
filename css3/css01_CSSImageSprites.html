@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>CSS Image Sprites</title>
+	<meta name="description" content="Angular Study" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	
+	<style>
+
+	#navlist{ /* - position is set to relative to allow absolute positioning inside it */
+		position: relative;
+	}
+	
+	#navlist li{
+		margin: 0; 
+		padding: 0;
+		list-style: none;
+		position: absolute;
+		top: 0;
+	}
+	
+	#navlist li, #navlist a {
+		height: 44px;
+		display: block;
+	}
+	
+	#home{
+		left: 0px;
+		width: 46px;
+		background: url('img/img_navsprites_hover.gif') 0 0;
+	}
+	
+	#home a:hover{
+		background: url('img/img_navsprites_hover.gif') 0 -45px;
+	}
+	
+	#prev{
+		left: 63px;
+		width: 43px;
+		background: url('img/img_navsprites_hover.gif') -47px 0;
+	}
+	
+	#prev a:hover{
+		background: url('img/img_navsprites_hover.gif') -47px -45px;
+	}
+	
+	#next{
+		left: 129px;
+		width: 43px;
+		background: url('img/img_navsprites_hover.gif') -91px 0;
+	}
+	
+	#next a:hover{
+		background: url('img/img_navsprites_hover.gif') -91px -45px;
+	}
+	</style>
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>
+	<![endif]-->	
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		var j$ = jQuery.noConflict();
+	</script>
+</head>
+<body>
+<header>
+	<hgroup>
+		<h1>CSS3 Study</h1>
+		<h2>CSS Image Sprites</h2>
+	</hgroup>
+	<nav>
+		<ul id="navlist">
+			<li id="home"><a href="#" title="home"></a></li>
+			<li id="prev"><a href="#" title="prev"></a></li>
+			<li id="next"><a href="#" title="next"></a></li>
+		</ul>			
+	</nav>
+</header>
+<div id="container">
+</div>
+<!-- script>
+</script -->
+</body>
+</html>
