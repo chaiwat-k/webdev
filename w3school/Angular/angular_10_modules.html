@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>AngularJS Events</title>
+	<meta name="description" content="Angular Study" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	
+	<link rel="stylesheet" href="css/main_styles.css" />
+	<link rel="stylesheet" href="css/angular_10_modules.css" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>
+	<![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script>
+		var j$ = jQuery.noConflict();
+	</script>
+</head>
+<body>
+<header>
+	<hgroup>
+		<h1>Angular JS Study</h1>
+		<p>Angular JS Modules</p>
+	</hgroup>
+	<nav></nav>
+</header>
+<div id="main" ng-app="myApp" ng-controller="myCtrl">
+	<div id="leftColumn">
+		<button id="b1" ng-click="toggle(1)">{{showB1 ? 'Show' : 'Hide'}}</button>
+		<button id="b2" ng-click="toggle(2)">{{showB2 ? 'Show' : 'Hide'}}</button>
+		<button id="b3" ng-click="toggle(3)">{{showB3 ? 'Show' : 'Hide'}}</button>
+		<button id="b4" ng-click="toggle(4)">{{showB4 ? 'Show' : 'Hide'}}</button>
+	</div>
+	<div id="centerColumn">	
+		<article>
+			<hgroup>
+				<h3>ng-click</h3>
+			</hgroup>
+			<p>Count: {{count}}
+			<button ng-click="count = count - 1">-</button>	
+			/
+			<button ng-click="count = count + 1">+</button>
+			</p>
+		</article>
+	</div>
+	<div id="rightColumn">
+		<div>
+			<div ng-hide="showB1" class="toggleBox">Box 1</div>
+			<div ng-hide="showB2"  class="toggleBox">Box 2</div>
+		</div>
+			<div ng-hide="showB3"  class="toggleBox">Box 3</div>
+			<div ng-hide="showB4"  class="toggleBox">Box 4</div>
+		</div>		
+	</div>	
+</div>
+<script src="js/angular_10_modules_app.js"></script>
+<script src="js/angular_10_modules_ctrl.js"></script>
+<script>
+j$(function(){
+});
+</script>
+</body>
+</html>

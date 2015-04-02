@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>The HTML5 Herald</title>
+	<meta name="description" content="The HTML5 Herald" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	
+	<link rel="stylesheet" href="css/styles.css?v=1.0" />
+	
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+	</script>
+	<![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<header>
+	<nav></nav>
+</header>
+<div id="main">
+	<div id="primary">
+		<article>
+			<div class="datetime">
+				<time datetime="1904-06-04" pubdate>June 4, 1904</time>
+			</div>
+			<hgroup>
+				<h1>The HTML5 Herald</h1>
+				<h2>Produced With That Good Ol' Timely HTML5 &amp; CSS3</h2>
+			</hgroup>
+			<p>Yes, you can use <mark>HTML5</mark> today!</p>
+			<a href="register.html">Sign Me Up!</a>
+		</article>
+	</div>
+<!-- End of #primary column	--------------------------------------------------->
+	<div id="secondary">
+		<article>
+			<hgroup>
+				<h1>WAI-ARIA</h1>
+				<h2>Web App Accessibility</h2>
+			</hgroup>
+			<p>Lorem ipsum dolor ...</p>
+			<p>As you can see in <a href="#fig1">Figure 1</a>,</p> 
+			
+			<figure id="fig1">
+				<figcaption>Screen Reader Support for WAI-ARIA</figcaption>
+				<img src="../The-HTML5-Herald-master/images/cat.png" alt="Cat" />				
+			</figure>
+			
+			<p>Lorem ipsum dolor ...</p>
+		</article>
+	</div>
+<!-- End of #secondary column	--------------------------------------------------->	
+	<div id="tertiary">
+		<aside>
+			<article>
+				<h1>Your task is in progress</h1>
+				<p>Status: 
+					<progress id="progressBar" min="0" max="100" value="0">					
+					</progress>
+					<span id="progressVal">0</span>%
+				</p>
+			</article>
+			<article>
+				<h1>Total current disk usage:</h1>
+				<meter min="0" max="320" low="10" high="300" title="gigabytes" value="63">63 GB</meter>
+			</article>
+			<article>
+				<p>We'll be getting together for our next developer conference on 
+				12 October of this year.</p>
+				<p>Using time element</p>
+				<p>We'll be getting together for our next developer conference on 
+				<time datetime="2015-10-12">12 October of this year</time>.</p>
+				<time datetime="2015-11-10T16:24:34.014-07:00">November 10th, 2015 16:24:34</time>
+			</article>			
+		</aside>
+		<article>
+			<style scoped>
+				h1{ color: blue; font-family: Times;}
+			</style>
+			<h1>How to use description list?</h1>
+			<dl>
+				<dt>WED</dt>
+				<dd>Wednesday</dd>
+				<dt>THU</dt>
+				<dd>Thursday</dd>
+			</dl>
+		</article>
+		<article>
+			<h1>How to use details?</h1>
+			<details>
+				<summary>Some Magazines of Note</summary>
+				<ul>
+					<li><cite>Bird Watchers Digest</cite></li>
+					<li><cite>Rowers Weekly</cite></li>
+					<li><cite>Fishing Monthly</cite></li>
+				</ul>
+			</details>
+		</article>
+	</div>
+<!-- End of #tertiary column	--------------------------------------------------->		
+</div><!--#main-->
+
+<footer>
+	<section id="authors">
+	</section>
+	<section id="copyright">
+		<small>&copy; SitePoint Pty. Ltd.</small>
+	</section>
+</footer>
+	
+<script src="js/scripts.js" async defer></script>
+<script>
+	$(function(){
+		var progressBar = $("#progressBar");
+		var progressVal = $("#progressVal");
+
+		var intvl = setInterval(function(){
+			
+			if(progressBar.val() >= 100){
+				progressVal.text("DONE!");
+				clearInterval(intvl);
+				return;
+			}
+			
+			var curVal = progressBar.val();
+			var nxtVal = curVal + 10;
+			progressVal.text(nxtVal);
+			progressBar.val(nxtVal);
+			
+		}, 1 * 1000);	
+	});
+</script>
+</body>
+</html>

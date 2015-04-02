@@ -1,0 +1,82 @@
+<!-- geolocation.html -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>HTML5 Geolocation API</title>
+	<meta name="keywords" content="HTML5, CSS3, SVG" />
+	<meta name="description" content="HTML5 SVG Demo" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/styles.css?v=1.0" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>		
+	<![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1>HTML5 Geolocation API</h1>
+		<p>Get user's current position...</p>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div id="mapHolder"></div>
+		</div>
+	</div>
+</div>
+<script>	
+	$(function(){
+		var mapHolder = $("#mapHolder");
+		function showError(error){
+			switch(error.code){
+				case error.PERMISSION_DENIED:
+				mapHolder.text("User denied the request for geolocation!");
+				break;
+				case error.POSITION_UNAVAILABLE:
+				mapHolder.text("Geolocation info is unavailable!");
+				break;
+				case error.TIMEOUT:
+				mapHolder.text("Timed out!");
+				break;
+				case error.UNKNOWN_ERROR:
+				mapHolder.text("An unknown error occured!");
+				break;
+			}
+		}
+		function showPosition(position){
+			mapHolder.text("Latitude = " + position.coords.latitude +
+			"Logitude = " + position.coords.logitude);
+		}
+		
+		function getLocation(){
+			if(!navigator.geolocation){
+				mapHolder.text("Geolocation is not support by this browser!");				
+				return;
+			}			
+			navigator.geolocation.getCurrentPosition(showPosition, showError);			
+		}
+		
+		// jQuery version
+		function getLocationJq(){
+			var geoLoc = $(navigator).prop("geolocation");
+			if(!geoLoc){
+				mapHolder.text("Geolocation is not support by this browser!");				
+				return;			
+			}
+			geoLoc.getCurrentPosition(showPosition, showError);	
+		}
+		
+		//getLocation();
+		getLocationJq();
+	});
+</script>	
+</body>
+</html>

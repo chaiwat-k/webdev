@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>jq002_Selectors</title>
+</head>
+<body>
+<h1>JQ Selectors</h1>
+<div id="messageDiv"></div>
+<button id="toggleBtn" type="button"> Toggle </button>
+<div id="calculatorDiv" style="position: absolute;">
+	<div id="display">0</div>
+	<div id="buttonContainer">
+		<div class="buttonRow">
+			<button id="CBtn" type="button" class="calculatorBtn opBtn">C</button>
+			<button id="divisionBtn" type="button" class="calculatorBtn opBtn">/</button>
+			<button id="multiplicationBtn" type="button" class="calculatorBtn opBtn">*</button>
+			<button id="minusBtn" type="button" class="calculatorBtn opBtn">-</button>
+		</div>	
+		<div class="buttonRow">
+			<button id="7Btn" type="button" class="calculatorBtn numberBtn">7</button>
+			<button id="8Btn" type="button" class="calculatorBtn numberBtn">8</button>
+			<button id="9Btn" type="button" class="calculatorBtn numberBtn">9</button>
+			<button id="plusBtn" type="button" class="calculatorBtn opBtn">+</button>
+		</div>	
+		<div class="buttonRow">
+			<button id="4Btn" type="button" class="calculatorBtn numberBtn">4</button>
+			<button id="5Btn" type="button" class="calculatorBtn numberBtn">5</button>
+			<button id="6Btn" type="button" class="calculatorBtn numberBtn">6</button>
+			<button           type="button" class="calculatorBtn emptyBtn">&nbsp;</button>
+		</div>		
+		<div class="buttonRow">
+			<button id="1Btn" type="button" class="calculatorBtn numberBtn">1</button>
+			<button id="2Btn" type="button" class="calculatorBtn numberBtn">2</button>
+			<button id="3Btn" type="button" class="calculatorBtn numberBtn">3</button>
+			<button           type="button" class="calculatorBtn emptyBtn">&nbsp;</button>
+		</div>
+		<div class="buttonRow">
+			<button id="0Btn" type="button" class="calculatorBtn numberBtn">0</button>
+			<button id="00Btn" type="button" class="calculatorBtn numberBtn">00</button>
+			<button id="dotBtn" type="button" class="calculatorBtn numberBtn">.</button>
+			<button id="equalBtn" type="button" class="calculatorBtn opBtn">=</button>
+		</div>		
+	</div>
+</div>	
+
+<!-- End body Start UI LOGIC SCRIPTS -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="jq002.js"></script>
+</body>
+</html>

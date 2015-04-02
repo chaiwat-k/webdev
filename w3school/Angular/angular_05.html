@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>AngularJS Filters</title>
+	<meta name="description" content="Angular Study" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	
+	<link rel="stylesheet" href="css/main_styles.css" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>
+	<![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script>
+		var j$ = jQuery.noConflict();
+	</script>
+</head>
+<body>
+<header>
+	<h1>Angular Study</h1>
+	<h2>
+	<nav></nav>
+</header>
+<div id="main" ng-app="myApp" ng-controller="myCtrl">
+	<div id="leftColumn">
+		<p>Search : <input type="text" ng-model="menuFilter" /></p>
+		<ul>			
+			<li ng-repeat="m in menus | filter:menuFilter | orderBy:'label'">{{m.label}}</li>
+		</ul>
+	</div>
+	<div id="centerColumn">		
+		<p>First Name: <input type="text" ng-model="firstName" /></p>
+		<p>Last  Name: <input type="text" ng-model="lastName" /></p>
+		<p>Full  Name: {{firstName + " " + lastName | lowercase}}</p>
+		<p>Full  Name: {{fullName() | uppercase}}</p>
+		<p>Cost      : {{ 50 * 125.5 | currency}}</p>
+	</div>
+	<div id="rightColumn">
+	</div>	
+</div>
+<footer>
+	<section id="authors">
+		<small>Chaiwat Kanchanarat</small>
+	</section>
+	<section id="copyright">
+		<small>&copy; CK Solutions Co., Ltd.</small>
+	</section>
+</footer>
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope){
+	$scope.firstName = "John";
+	$scope.lastName = "Doe";
+	$scope.fullName = function(){
+		return $scope.firstName + ' ' + $scope.lastName;
+	};
+	$scope.menus = [
+		 {label: 'Jake', link: 'www.ibm.com'}
+		,{label: 'Hege', link: 'www.oracle.com'}
+		,{label: 'Cicero', link: 'www.microsoft.com'}
+	];
+});
+
+j$(function(){
+	j$('input').css("background-color", "lightgrey");
+});
+</script>
+</body>
+</html>

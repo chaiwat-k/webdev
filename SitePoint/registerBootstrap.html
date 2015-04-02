@@ -1,0 +1,78 @@
+<!-- registerBootstrap.html -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>The HTML5 Herald</title>
+	<meta name="keywords" content="HTML5, CSS3, JavaScript, Bootstrap" />
+	<meta name="description" content="The HTML5 Herald registration" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/styles.css?v=1.0" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>
+	<![endif]-->	
+		
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1>Sign Me Up!</h1>
+		<p>I'd like to receive your fine publication.</p>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<form id="register-form" role="form">
+				<div class="form-group">
+					<label for="register-name">My name is:</label>
+					<input id="register-name" type="text" name="name" required aria-required="true" placeholder="John Doe" class="form-control" />			
+				</div>
+				<div class="form-group">
+					<label for="register-address">My email address is:</label>
+					<input id="register-address" type="text" name="address" required aria-required="true" placeholder="abc.def@xyz.com" class="form-control" />			
+				</div>
+				<div class="form-group">
+					<label for="register-url">My website is located at:</label>
+					<input id="register-url" type="text" name="url" placeholder="http://www.google.com/" class="form-control" />			
+				</div>
+				<div class="form-group">
+					<label for="register-dob">My birth date is:</label>
+					<input id="register-dob" type="date" name="dob" class="form-control" />
+					<span>My age is <output id="register-age" name="age" for="register-dob"></output> year(s) old.</span>
+				</div>
+				<div class="form-group">
+					<label for="register-favColor">My favourite color is:</label>
+					<input id="register-favColor" type="color" name="favColor" />
+				</div>
+			</form>
+		</div>		
+	</div>
+</div>
+<!-- Scripts -->
+<script src="js/scripts.js" async defer></script>
+<script>
+	function bindEvents(){
+		var registerDob = $("#register-dob");
+		var registerAge = $("#register-age");
+		registerDob.change(function(){
+			var dateParts = registerDob.val().split("-");
+			var dob = new Date(dateParts[0], dateParts[1], dateParts[2]);
+			var curY = Number(new Date().getFullYear());
+			var dobY = Number(dob.getFullYear());
+			registerAge.val(curY - dobY);
+		});
+	}
+	
+	$(function(){
+		bindEvents();
+	});
+</script>
+<noscript>Sorry, your browser does not support JavaScript!</noscript>
+</body>
+</html>

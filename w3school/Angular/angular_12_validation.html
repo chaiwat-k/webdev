@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>AngularJS Validation</title>
+	<meta name="description" content="Angular Study" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	
+	<link rel="stylesheet" href="css/main_styles.css" />
+	<link rel="stylesheet" href="css/angular_10_modules.css" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>
+	<![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script>
+		var j$ = jQuery.noConflict();
+	</script>
+</head>
+<body>
+<header>
+	<hgroup>
+		<h1>Angular JS Study</h1>
+		<h2>Angular JS Validation</h2>
+	</hgroup>
+	<nav></nav>
+</header>
+<div id="main" ng-app="myApp" ng-controller="myCtrl">
+	<div id="leftColumn">
+	</div>
+	<div id="centerColumn">	
+		<article>
+			<hgroup>
+				<h3>Login Form</h3>
+			</hgroup>
+			<form name="loginForm" novalidate>
+				<p>
+					<div class="label">Email:</div>
+					<input type="email" name="email" ng-model="email" required />
+					<div class="invalidMsg" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">
+						<span ng-show="loginForm.email.$error.required">Email is required!</span>
+						<span ng-show="loginForm.email.$error.email">Invalid email address!</span>					
+					</div>
+				</p>
+				<p>
+					<div class="label">Password:</div>
+					<input type="password" name="password" ng-model="password" required pattern="^(?=.*\d).{4,8}$" />
+					<div class="invalidMsg" ng-show="loginForm.password.$dirty && loginForm.password.$invalid">
+						<span ng-show="loginForm.password.$error.required">Password is required!</span>
+						<span ng-show="loginForm.password.$error.pattern">Invalid password! Password must be between 4 and 8 digits long and include at least one numeric digit.</span>
+					</div>
+				</p>				
+				<p>
+					<div class="label">Remember?</div>
+					<input type="checkbox" name="remember" ng-model="remember" />
+				</p>
+				<p>
+					<input type="submit" ng-disabled="formInvalid()" />
+					<input type="reset" />
+				</p>
+			</form>
+		</article>
+	</div>
+	<div id="rightColumn">	
+	</div>	
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope){
+	
+	// Variables
+	
+	// Funtions
+	
+	$scope.formInvalid = function(){
+		return ($scope.loginForm.email.$dirty && $scope.loginForm.email.$invalid) ||
+		       ($scope.loginForm.password.$dirty && $scope.loginForm.password.$invalid);
+	};
+	
+});
+j$(function(){
+});
+</script>
+</body>
+</html>

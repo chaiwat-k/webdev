@@ -1,0 +1,57 @@
+/* main_styles */
+
+header{
+	background-color: lightblue;
+}
+
+footer{
+	clear: both;
+	text-align: center;
+	background-color: lightblue;
+	height: 49px;
+}
+
+article{
+	margin: 5px;
+	padding: 5px;
+	background-color: lightgrey;
+}
+
+.label{
+	width: 250px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.invalidMsg{
+	color: red;
+	font-size: small;
+	font-style: italic;
+}
+
+.leftColumn{
+	border: 1px solid orange;
+	width: 10%;
+	float: left;
+	margin-right: 5px;
+	padding: 5px;
+}
+.centerColumn{
+	border: 1px solid red;
+	width: 64%;
+	float: left;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+.rightColumn{
+	border: 1px solid blue;
+	width: 20%;
+	float: left;
+	margin-left: 5px;
+	padding: 5px;
+}
+
+#main{	
+	width: 80%;
+	margin: 0px;
+	padding: opx;
+}

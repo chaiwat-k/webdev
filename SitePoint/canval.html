@@ -1,0 +1,52 @@
+<!-- registerBootstrap.html -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>The HTML5 Herald</title>
+	<meta name="keywords" content="HTML5, CSS3, JavaScript, Bootstrap" />
+	<meta name="description" content="The HTML5 Herald registration" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/styles.css?v=1.0" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>
+	<![endif]-->	
+		
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1>HTML5 Canvas</h1>
+		<p>Draw something here...</p>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<canvas id="theCanvas" width="200" height="200" style="border: 1px solid #000000">
+			</canvas>
+		</div>		
+	</div>
+</div>
+<!-- Scripts -->
+<script src="js/scripts.js" async defer></script>
+<script>	
+
+	$(function(){
+		var c = document.getElementById("theCanvas");
+		var ctx = c.getContext("2d");
+		ctx.fillStyle = "#FF0000";
+		ctx.fillRect(10,10,150,75);
+		ctx.beginPath();
+		ctx.arc(95,50,40,0,2*Math.PI);
+		ctx.stroke();
+	});
+</script>
+<noscript>Sorry, your browser does not support JavaScript!</noscript>
+</body>
+</html>

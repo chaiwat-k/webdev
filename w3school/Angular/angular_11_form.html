@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>AngularJS Form</title>
+	<meta name="description" content="Angular Study" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	
+	<link rel="stylesheet" href="css/main_styles.css" />
+	<link rel="stylesheet" href="css/angular_10_modules.css" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>
+	<![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script>
+		var j$ = jQuery.noConflict();
+	</script>
+</head>
+<body>
+<header>
+	<hgroup>
+		<h1>Angular JS Study</h1>
+		<h2>Angular JS Form</h2>
+	</hgroup>
+	<nav></nav>
+</header>
+<div id="main" ng-app="myApp" ng-controller="myCtrl">
+	<div id="leftColumn">
+	</div>
+	<div id="centerColumn">	
+		<article>
+			<hgroup>
+				<h3>Login Form</h3>
+			</hgroup>
+			<form novalidate>
+				<p><div class="label">Username:</div><input type="text" ng-model="login.username" ng-disabled="!hideResult()" /></p>
+				<p><div class="label">Password:</div><input type="password" ng-model="login.password" ng-disabled="!hideResult()" /></p>
+				<p><div class="label">Remember?</div><input type="checkbox" ng-model="login.remember" ng-disabled="!hideResult()" /></p>
+				<p>
+					<button ng-click="submitLogin()">Login</button>
+					<button ng-click="reset()">Reset</button>
+				</p>
+				<div ng-hide="hideResult()">Result: {{loginResult}} : {{login}}</div>
+			</form>
+		</article>
+	</div>
+	<div id="rightColumn">	
+	</div>	
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope){
+	
+	// Variables
+	
+	$scope.master = { username: 'user1', password: 'password1', remember: false };
+	$scope.loginResult = '';
+	$scope.hideResult = true;
+	
+	// Funtions
+	
+	$scope.submitLogin = function(){
+		if(!$scope.login){
+			$scope.loginResult = 'Failed';
+			return;
+		}
+		
+		if(!$scope.login.username || $scope.login.username.length <= 0){
+			$scope.loginResult = 'Failed';
+			return;
+		}
+		
+		if(!$scope.login.password || $scope.login.password.length <= 0){
+			$scope.loginResult = 'Failed';
+			return;
+		}
+		
+		$scope.loginResult = 'Passed';
+	};
+	
+	$scope.reset = function(){
+		$scope.login = angular.copy($scope.master);
+		$scope.loginResult = '';
+	};
+	
+	$scope.hideResult = function(){
+		return $scope.loginResult.length <= 0;
+	}
+	
+	// Calls
+	
+	$scope.reset();
+	
+});
+j$(function(){
+});
+</script>
+</body>
+</html>

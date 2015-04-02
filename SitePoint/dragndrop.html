@@ -1,0 +1,94 @@
+<!-- dragndrop.html -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>HTML5 drag n drop</title>
+	<meta name="keywords" content="HTML5, CSS3, Drag N Drop" />
+	<meta name="description" content="HTML5 Drag N Drop Demo" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<style>
+		.holderTotal{
+			margin: 10px;
+			font-size: 20px;
+		}
+		.holderBox{
+			margin: 10px;
+			width: 200px;
+			height: 400px;
+			border: 1px solid #000000;
+			float: left;
+		}
+		.colorBox{
+			margin: 10px;
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000000;
+			color: #FFFFFF;	
+		}
+	</style>
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>		
+	<![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1>HTML5 drag n drop</h1>
+		<p>See how HTML5 supports HTML5 drag n drop...</p>
+	</div>
+	<div id="firstHolderBox" class="holderBox"
+	 ondrop="drop(event)" ondragover="allowDrop(event)">
+		<div id="firstHolderTotal" class="holderTotal">0</div>
+		<div id="redColorBox" class="colorBox" draggable="true" ondragstart="drag(event)" style="background-color: #FF0000">10</div>
+		<div id="greenColorBox"  class="colorBox" draggable="true" ondragstart="drag(event)" style="background-color: #00FF00">20</div>
+		<div id="blueColorBox"  class="colorBox" draggable="true" ondragstart="drag(event)" style="background-color: #0000FF">30</div>
+	</div>			
+	<div id="secondHolderBox" class="holderBox"
+	 ondrop="drop(event)" ondragover="allowDrop(event)">
+		<div id="secondHolderTotal" class="holderTotal">0</div>
+	</div>
+</div>
+<script>
+	function allowDrop(ev){
+		ev.preventDefault();
+	}
+	
+	function drag(ev){
+		ev.dataTransfer.setData("colorBoxId", ev.target.id);
+	}
+	
+	function drop(ev){
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("colorBoxId");
+		ev.target.appendChild(document.getElementById(data));
+		refreshTotals();
+	}
+	
+	function total(holderBoxId){
+		var t = 0;
+		$("#"+holderBoxId+" .colorBox").each(function(){
+			t += Number($(this).text());
+		});
+		return t;
+	}
+	
+	function refreshTotals(){
+		$("#firstHolderTotal").text(total("firstHolderBox"));
+		$("#secondHolderTotal").text(total("secondHolderBox"));	
+	}
+	
+	$(function(){
+		refreshTotals();
+	});
+</script>	
+</body>
+</html>

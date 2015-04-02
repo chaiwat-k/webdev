@@ -1,0 +1,67 @@
+<!-- webworker.html -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>HTML5 WEBWORKER</title>
+	<meta name="keywords" content="HTML5, CSS3, WEBWORKER" />
+	<meta name="description" content="HTML5 WEBWORKER Demo" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<style>
+		#couterDisplay{
+			font-size: 10em;
+		}
+	</style>
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>		
+	<![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1>HTML5 WEBWORKER</h1>
+		<p>See how HTML5 supports WEBWORKER...</p>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div id="couterDisplay">0</div>
+			<button onclick="startWorker()">Start Worker</button>
+			<button onclick="stopWorker()">Stop Worker</button>
+		</div>
+	</div>
+</div>
+<script>
+	
+	var w;
+	function startWorker(){
+		var couterDisplay = $("#couterDisplay");
+		if(typeof(Worker) === "undefined"){
+			couterDisplay.text("Sorry!, No web worker support...");
+			return;
+		}
+		
+		
+		if(typeof(w) == "undefined"){
+			w = new Worker("js/demo_workers.js");
+		}
+		
+		w.onmessage = function(event){
+			couterDisplay.text(event.data);
+		};
+	}
+	
+	function stopWorker(){
+		w.terminate();
+		w = undefined;
+	}
+</script>	
+</body>
+</html>

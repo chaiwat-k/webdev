@@ -1,0 +1,54 @@
+<!-- svg.html -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>HTML5 SVG</title>
+	<meta name="keywords" content="HTML5, CSS3, SVG" />
+	<meta name="description" content="HTML5 SVG Demo" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/styles.css?v=1.0" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>		
+	<![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1>HTML5 SVG</h1>
+		<p>See how HTML5 supports SVG...</p>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<svg width="200" height="200">			
+				<circle id="theCircle" cx="100" cy="100" r="40" stroke="green" stroke-width="4" fill="yellow" />
+				Sorry, your browser does not support inline SVG.
+			</svg>
+			<input id="circleResizeRange" type="range" min="10" max="100" />
+		</div>
+		<div class="col-md-4">
+			<svg width="500" height="200">
+				<rect width="400" height="100" style="fill: #0000FF; stroke-widht: 10; stroke: #00FF00;" />
+				Sorry, your browser does not support inline SVG.				
+			</svg>
+		</div>
+	</div>
+</div>
+<script>
+$(function(){
+	var circleResizeRange = $("#circleResizeRange").change(function(){
+		var theCircle = $("#theCircle");
+		theCircle.attr("r", $(this).val());
+	});
+});
+</script>	
+</body>
+</html>

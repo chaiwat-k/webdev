@@ -1,0 +1,76 @@
+<!-- localStorage.html -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>HTML5 Local Storage</title>
+	<meta name="keywords" content="HTML5, CSS3, localStorage, sessionStorage" />
+	<meta name="description" content="HTML5 Local Storage Demo" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/styles.css?v=1.0" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>		
+	<![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1>HTML5 Local Storage</h1>
+		<p>See how HTML5 supports Local Storage...</p>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<p>Local Storage</p>
+			<span id="localStorageCounter"></span>
+			<p>Session Storage</p>
+			<span id="sessionStorageCounter"></span>
+		</div>
+	</div>
+</div>
+<script>
+	$(function(){
+	
+		function initLocalCounter(){
+			var localStorageCounter = $("#localStorageCounter");
+			if(typeof(Storage) === undefined){
+				localStorageCounter.text("Sorry! No web storage support...");
+				return;
+			}
+			var localRefreshCount = localStorage.getItem("localRefreshCount");
+			if(!localRefreshCount){
+				localRefreshCount = 0;				
+			}
+			localRefreshCount = Number(localRefreshCount) + 1;
+			localStorageCounter.text(localRefreshCount);
+			localStorage.setItem("localRefreshCount", localRefreshCount);
+		}
+		
+		function initSessionCounter(){
+			var sessionStorageCounter = $("#sessionStorageCounter");
+			if(typeof(Storage) === undefined){
+				sessionStorageCounter.text("Sorry! No web storage support...");
+				return;
+			}
+			var sessionRefreshCount = sessionStorage.getItem("sessionRefreshCount");
+			if(!sessionRefreshCount){
+				sessionRefreshCount = 0;
+			}
+			sessionRefreshCount = Number(sessionRefreshCount) + 1;
+			sessionStorageCounter.text(sessionRefreshCount);
+			sessionStorage.setItem("sessionRefreshCount", sessionRefreshCount);
+		}
+		
+		initLocalCounter();
+		initSessionCounter();
+	});
+</script>	
+</body>
+</html>

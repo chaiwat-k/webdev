@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Angular 01</title>
+	<meta name="description" content="Angular" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	
+	<link rel="stylesheet" href="css/main_styles.css" />
+	
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+	</script>
+	<![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Angular Study</h1>
+		<h2>My first Angular</h2>
+		<nav></nav>
+	</header>
+	<div id="main">
+		<div id="leftColumn">
+		</div>
+		<div id="centerColumn">
+			<div ng-app="">
+				<p>Name: <input type="text" ng-model="name" /></p>
+				<p>You type: {{name}}</p>
+			</div>
+		</div>
+		<div id="rightColumn">
+		</div>
+	</div>
+	<footer>
+		<section id="authors">
+		</section>
+		<section id="copyright">
+			<small>&copy; CK Solutions Co., Ltd.</small>
+		</section>
+	</footer>
+</body>	
+</html>

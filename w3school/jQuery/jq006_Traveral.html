@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>jq006_Traveral</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>JQ Traversal</h1>
+<div id="messageDiv"></div>
+<div id="outerDiv">
+	<ul id="theList">
+		<li id="listItem1">
+			<p>This is a paragraph inside the first list item.</p>
+		</li>
+		<li id="listItem2">
+			<span>This is a span inside the second list item.</span>
+			<div>This is a div inside the second list item.</div>
+		</li>
+		<li id="listItem3">
+			<pre id="jsCodeBlock">
+				// This is a JavaScript funciton
+				function hello(){
+					return "Hello...";
+				}
+			</pre>
+		</li>
+	</ul>
+</div>
+<!-- End body Start UI LOGIC SCRIPTS -->
+<script src="jq006.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+/* angular_10_modules.css */
+.toggleBox{
+	margin: 5px;			
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	background-color: pink;
+	text-align: center;
+}

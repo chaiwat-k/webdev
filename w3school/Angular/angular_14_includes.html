@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>AngularJS Includes</title>
+	<meta name="description" content="Angular Study" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	
+	<link rel="stylesheet" href="css/main_styles.css" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>
+	<![endif]-->
+	
+</head>
+<body>
+<div id="main" ng-app="myApp" ng-controller="myCtrl">
+<div ng-include="'angular_14_includes_header.html'"></div>
+<div class="leftColumn">
+</div>
+<div class="centerColumn">		
+	<button ng-disabled="mySwitch">Enable/Disable</button>		
+	<button ng-show="mySwitch">Show/Hide</button>
+	<p><input type="checkbox" ng-model="mySwitch" />Button</p>	
+</div>
+<div class="rightColumn">
+</div>	
+<footer>
+	<div class="leftColumn">
+	</div>
+	<div class="centerColumn">	
+		<section id="authors">
+			<small>Chaiwat Kanchanarat</small>
+		</section>
+		<section id="copyright">
+			<small>&copy; CK Solutions Co., Ltd.</small>
+		</section>
+	</div>
+	<div class="rightColumn">
+	</div>		
+</footer>
+</div>
+<!-- End body, Start scripts -->
+<!-- script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script id="jquery">
+	var j$ = jQuery.noConflict();
+	j$(function(){});
+</script -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script id="angular">
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope){
+});
+</script>
+</body>
+</html>

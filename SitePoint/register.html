@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>The HTML5 Herald</title>
+	<meta name="description" content="The HTML5 Herald" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	
+	<link rel="stylesheet" href="css/styles.css?v=1.0" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>
+	<![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+	
+	<div id="login-form-layout" class="form-layout">
+		<div class="fieldset">
+			<div class="label">
+				<label for="login-username">Username: </label>
+			</div>
+			<div class="input">
+				<input id="login-username" type="text" name="username" form="login-form" required />
+			</div>
+		</div>
+		<div class="fieldset">
+			<div class="label">
+				<label for="login-password">Password: </label>
+			</div>
+			<div class="input">
+				<input id="login-password" type="password" name="password"  form="login-form" required />
+			</div>
+		</div>
+		<div class="fieldset">
+			<div class="label">
+				<label for="login-role">Role: </label>
+			</div>
+			<div class="input">
+				<input id="login-role" type="text" name="role"  form="login-form" list="user-roles" required />
+			</div>
+		</div>		
+		<div class="fieldset">
+			<div class="label">&nbsp;
+			</div>
+			<div class="input">
+				<input id="login-submit" type="submit" value="Login" form="login-form" />
+			</div>
+		</div>		
+	</div>
+	<form id="register" method="post">
+		<hgroup>
+			<h1>Sign Me Up!</h1>
+			<h2>I would like to receive your fine publication.</h2>
+			<ul class="form-ul-layout">
+				<li>
+					<label for="register-name">My name is:</label>
+					<input id="register-name" type="text" name="name" required aria-required="true" placeholder="John Doe" />
+				</li>
+				<li>
+					<label for="register-address">My email address is:</label>
+					<input id="register-address" type="text" name="address" required aria-required="true" placeholder="abc.def@xyz.com" />
+				</li>
+				<li>
+					<label for="register-url">My website is located at:</label>
+					<input id="register-url" type="text" name="url" placeholder="http://www.google.com/" />
+				</li>
+				<li>
+					<label for="register-password">I would like my password to be:</label>
+					<p>(at least 6 characters, no spaces)</p>
+					<input id="register-password" type="password" name="password" required aria-required="true" pattern="\s{6,}" />
+				</li>
+				<li>
+					<label for="register-rating">On a scale of 1 to 10, my knowledge of HTML5 is:</label>
+					<input id="register-rating" type="text" name="rating" />
+				</li>
+				<li>
+					<label for="register-startdate">Please, start my subscription on:</label>
+					<input id="register-startdate" type="text" name="startdate" required aria-required="true" placeholder="1911-11-10" />
+				</li>
+				<li>
+					
+					<label for="register-quantity">I would like to receive 
+						<input id="register-quantity" type="text" name="quantity" disabled /> 
+						copies of <cite>The HTML5 Herald</cite>.
+					</label>
+				</li>
+				<li>
+					<label for="register-upsell">Also sign me up for <cite>The CSS3 Chronicle</cite></label>
+					<input id="register-upsell" type="checkbox" name="upsell" readonly />
+				</li>
+				<li>
+					<input id="register-submit" type="submit" value="Send Post Haste" />
+				</li>
+			</ul>
+		</hgroup>
+	</form>
+	
+	<!-- Forms -->
+	<form id="login-form" method="post">
+	</form>
+	
+	<!-- Datalists -->
+	<datalist id="user-roles">
+		<option value="Admin" />
+		<option value="Support" />
+		<option value="Supervisor" />
+		<option value="User" />
+	</datalist>
+
+	<!-- Scripts -->
+	<script src="js/scripts.js" async defer></script>
+</body>
+</html>

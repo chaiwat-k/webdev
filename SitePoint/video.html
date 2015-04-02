@@ -1,0 +1,50 @@
+<!-- video.html -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>HTML5 VIDEO</title>
+	<meta name="keywords" content="HTML5, CSS3, SVG" />
+	<meta name="description" content="HTML5 VIDEO" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/styles.css?v=1.0" />
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>		
+	<![endif]-->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1>HTML5 VIDEO</h1>
+		<p>See how HTML5 supports VIDEO...</p>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<article>
+				<h2>Video</h2>
+				<video width="320" height="240" controls>
+					<source src="..\The-HTML5-Herald-master\media\ford-plane-takes-off.mp4" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
+			</article>
+		</div>
+		<div class="col-md-4">
+			<article>
+				<h2>YouTube Video</h2>
+				<p>Franklin's Barbecue</p>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/VmTzdMHu5KU" frameborder="0" allowfullscreen></iframe>
+			</article>
+		</div>
+	</div>
+</div>
+<script src="js/scripts.js" async defer></script>
+</body>
+</html>
