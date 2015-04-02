@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>CSS Background</title>
+	<meta name="description" content="Angular Study" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	
+	<!-- link rel="stylesheet" href="css/main_styles.css" / -->
+	<style>
+		body{
+			margin: 0px;
+			padding: 0px;
+		}
+		article{
+			margin: 2px;
+			padding: 2px;
+			background-color: lightcyan;
+		}	
+		header{
+			width: 100%;
+			height: 60px;
+			position: absolute;
+			top: -60px;
+			left: 0px;
+		}
+		header h1, header h2{
+			margin: 2px;
+		}
+		footer{		
+			width: 100%;
+			height: 50px;
+			font-style: italic;
+			font-size: medium;
+			font-weight: normal;
+			text-align: center;
+			position: absolute;
+			bottom:-50px;
+		}
+		.layoutColumn{
+			height: 100%;
+			padding: 10px;
+		}
+		.circleBg{
+			background-image: url("../../img/circlemesh.jpg");
+			background-repeat: repeat;
+		}
+		#tagline{
+			font-style: italic;
+			font-size: medium;
+			font-weight: normal;
+		}
+		#main{
+			margin-top: 65px;
+			margin-bottom: 50px;
+			height: 400px; 		
+		}		
+		#leftColumn{
+			width: 10%;			
+			float: left;
+		}
+		#centerColumn{
+			width: 65%;
+			height: 100%;
+			float: left;
+			border: 1px solid blue;
+			position:relative;
+		}
+		#rightColumn{
+			width: 20%;
+			float: left;
+		}
+	</style>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>
+	<![endif]-->	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		var j$ = jQuery.noConflict();
+	</script>
+</head>
+<body>
+<div id="main">
+	<div id="leftColumn" class="layoutColumn circleBg">
+		<ul>
+			<li>Menu 1</li>
+			<li>Menu 2</li>
+			<li>Menu 3</li>
+		</ul>
+	</div>
+	<div id="centerColumn" class="layoutColumn">	
+		<header>
+			<hgroup>
+				<h1>CSS Study</h1>
+				<h2 id="tagline">CSS Background</h2>
+			</hgroup>
+			<nav></nav>
+		</header>
+		<p>This is a paragraph</p>
+		<p>This is a paragraph</p>
+		<p>This is a paragraph</p>
+		<p>This is a paragraph</p>
+		<p>This is a paragraph</p>
+		<footer>
+			<p>&copy;&nbsp;Chaiwat Kanchanarat</p>
+		</footer>		
+	</div>
+	<div id="rightColumn" class="layoutColumn circleBg">
+		<article>
+			<p>Article 1</p>
+		</article>
+		<article>
+			<p>Article 2</p>
+			<p>Article 2</p>
+		</article>
+		<article>
+			<p>Article 3</p>
+			<p>Article 3</p>
+			<p>Article 3</p>
+		</article>		
+	</div>	
+</div>
+<script>
+j$(function(){
+	// Adjust #main's height to the viewport height	
+	j$("#main").css("height", j$(window).height() - 100);
+	//j$("footer").css("width", j$("#centerColumn").css("width"));
+	//j$("footer").css("margin-top", (Number(j$("#centerColumn").css("height").replace('px','')) + 2) + 'px');
+});
+</script>
+</body>
+</html>
