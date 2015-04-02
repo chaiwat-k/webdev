@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>CSS Image Sprites-Running Cat</title>
+	<meta name="description" content="Angular Study" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+	
+	<style>
+	
+	#container{
+		position: relative;
+	}
+	
+	#cat-run{
+		position:absolute;
+		top: 100px;
+		width: 111px;
+		height: 61px;
+	}
+
+	.step0{		
+		left: 0px;
+		background: url('img/cat_run.jpg') 0 0;
+	}
+	.step1{	
+		left: 112px;
+		background: url('img/cat_run.jpg') -112px 0;
+	}	
+	.step2{		
+		left: 224px;	
+		background: url('img/cat_run.jpg') 0 -62px;
+	}
+	.step3{		
+		left: 336px;	
+		background: url('img/cat_run.jpg') -112px -62px;
+	}	
+	.step4{		
+		left: 448px;	
+		background: url('img/cat_run.jpg') 0 -119px;
+	}
+	.step5{		
+		left: 560px;	
+		background: url('img/cat_run.jpg') -112px -119px;
+	}
+	.step6{	
+		left: 672px;	
+		background: url('img/cat_run.jpg') 0 -173px;
+	}
+	.step7{	
+		left: 784px;	
+		background: url('img/cat_run.jpg') -112px -173px;
+	}	
+
+	</style>
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+		</script>
+	<![endif]-->	
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		var j$ = jQuery.noConflict();
+	</script>
+</head>
+<body>
+<header>
+	<hgroup>
+		<h1>CSS3 Study</h1>
+		<h2>CSS Image Sprites-Running Cat</h2>
+	</hgroup>
+	<nav>			
+	</nav>
+</header>
+<div id="container">
+	<input type="range" id="step" name="step" min="0" max="7" 
+	value="0" oninput="run();"/>
+	<p>Step: <span id="curStep"></span></p>
+	<p>Move the handle to make the car run!</p>
+	
+	<div id="cat-run" class="step1">
+	</div>
+	
+</div>
+<script>
+var stepInput = j$('#step');
+var curStep = j$('#curStep');
+var catRun = j$('#cat-run');
+function run(){	
+		var v = stepInput.val();
+		curStep.text(v);
+		catRun.removeClass();		
+		catRun.addClass('step'+v);		
+}
+</script>
+</body>
+</html>
