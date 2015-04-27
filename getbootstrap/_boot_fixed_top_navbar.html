@@ -9,7 +9,7 @@
 	<meta name="description" content="Bootstrap Study" />
 	<meta name="author" content="Chaiwat Kanchanarat" />
 
-	<title>Bootstrap Starter Template</title>	
+	<title>Bootstrap Navbar</title>	
 
     <!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -19,11 +19,11 @@
 	<!-- Page CSS -->
 	<style>
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  min-height: 2000px;
 }
-.navbar {
-  margin-bottom: 20px;
+
+.navbar-static-top {
+  margin-bottom: 19px;
 }
 	</style>
 	
@@ -37,8 +37,8 @@ body {
 	<div class="container">
 	
 	<!-- Static navbar -->
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 					<span class="sr-only">Toggle navigation</span>
@@ -68,9 +68,9 @@ body {
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="#">Default <span class="sr-only">(current)</span></a></li>
+					<li class="active"><a href="_boot_default_navbar.html">Default <span class="sr-only">(current)</span></a></li>
 					<li><a href="_boot_static_top_navbar.html">Static top</a></li>
-					<li><a href="_boot_fixed_top_navbar.html">Fixed top</a></li>
+					<li><a href="#">Fixed top</a></li>
 				</ul>
 			</div>
 		</div>
