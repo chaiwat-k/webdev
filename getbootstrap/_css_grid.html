@@ -51,7 +51,8 @@ hr {
     <![endif]-->
   </head>
   <body>
-  
+	<a href="#bottom">Bottom</a>
+	
 	<div class="page-header">
 		<h1>One type of column</h1>			
 	</div>  
@@ -111,7 +112,113 @@ hr {
 		</div>
 		
 	</div>
+	
+	<div class="page-header">
+		<h1>Mobile, tablet, desktop</h1>		
+	</div>
+	
+	<div class="container-fluid">
+	
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+			<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 col-sm-4">
+				.col-xs-6 .col-sm-4
+			</div>
+			<div class="col-xs-6 col-sm-4">
+				.col-xs-6 .col-sm-4
+			</div>
+			<!-- Optional: clear the XS cols if their content doesn't match in height -->
+			<!-- div class="clearfix visible-xs-block"></div -->
+			<div class="col-xs-6 col-sm-4">
+				.col-xs-6 .col-sm-4
+				<p>Xxxxxxxxxxxxxxxxxxx<br />Yyyyyyyyyyyyyyy<br />Zzzzzzzzzzzz</p>
+			</div>
+		</div>
+	
+	</div>
+	
+	<div class="page-header">
+		<h1>Column wrapping</h1>
+	</div>
 
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-9">.col-xs-9</div>
+			<div class="col-xs-3">.col-xs-3</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-9">.col-xs-9</div>
+			<div class="col-xs-5">.col-xs-5<br />Since 9 + 5 = 14 &gt; 12 
+			these 4-column div get wrapped into a new line as one contiguous unit.
+			</div>
+			<div class="col-xs-6">.col-xs-6<br />
+			Subsequent columns continue along the new line.
+			</div>
+		</div>
+	</div>
+	
+	<div class="page-header">
+		<h1>Responsive column resets</h1>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+			<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+			
+			<!-- Add the extra clearfix for only the required viewport -->
+			<div class="clearfix visible-xs-block"></div>
+			
+			<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+			<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+		</div>
+	</div>
+	
+	<div class="page-header">
+		<h1>Offsetting columns</h1>
+		<p class="lead">
+			Move columns to the right using .col-md-offset-* classes. 
+			These classes increase the left margin of a column by * columns.
+		</p>
+	</div>
+	
+	<div class="container">
+	
+		<div class="row">
+			<div class="col-md-4">.col-md-4</div>
+			<div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+			<div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+		</div>
+	
+	</div>
+	
+	<div class="page-header">
+		<h1>Column ordering</h1>	
+	</div>
+	
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-md-9">.col-md-9</div>
+			<div class="col-md-3">.col-md-3</div>
+		</div>		
+		<div class="row">
+			<div class="col-md-9 col-md-push-3">.col-md-9 .col-md-push-3</div>
+			<div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
+		</div>		
+		
+	</div>
+	
+	<a name="bottom"></a>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>	
   </body>

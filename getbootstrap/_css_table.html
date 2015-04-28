@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+	<meta name="description" content="Bootstrap Study" />
+	<meta name="author" content="Chaiwat Kanchanarat" />
+
+	<title>Bootstrap CSS Table</title>	
+
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" -->
+	
+	<!-- Page -->
+	<style>
+	</style>
+	
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	<a href="#bottom">Bottom</a>
+			
+	<div class="container">
+	
+		<h1>CSS Table</h1>	
+		
+		<div class="row">		
+			<div class="col-md-12">
+			
+				<h2>Basic example</h2>
+				<p>
+					For basic styling--light padding and only horizontal 
+					dividers--add the base class <code>.table</code> to any
+					<code>&lt;table&gt;</code>. It may seem super redundant,
+					but given the widespread use to tables for other plugins
+					like calendars and date pickers, we've opted to isolate our
+					custom table styles.
+				</p>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Username</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>					
+					</tbody>
+				</table>
+				
+			</div>			
+		</div><!-- /.row -->
+		
+		<div class="row">
+			<div class="col-md-12">
+				
+				<h2>Striped rows</h2>
+				<p>Use <code>.table-striped</code> to add zebra-striping to 
+				any table row within the <code>&lt;tbody&gt;</code>.</p>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Username</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>					
+					</tbody>				
+				</table>
+			</div>
+		</div><!-- /.row -->
+		
+		<div class="row">
+			<div class="col-md-12">
+				
+				<h2>Bordered table</h2>
+				<p>
+					Add <code>.table-bordered</code> for borders on all sides
+					of the table and cells.
+				</p>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Username</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>					
+					</tbody>				
+				</table>				
+				
+			</div>
+		</div><!-- /.row -->
+		
+		<div class="row">
+			<div class="col-md-12">
+			
+				<h2>Hover rows</h2>
+				<p>
+					Add <code>.table-hover</code> to enable a hover state on table
+					rows within a <code>&lt;tbody&gt;</code>.
+				</p>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Username</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>					
+					</tbody>				
+				</table>			
+		
+			</div>
+		</div><!-- /.row -->
+		
+		<div class="row">
+			<div class="col-md-12">
+				
+				<h2>Condensed table</h2>
+				<p>
+					Add <code>.table-condensed</code> to make tables more
+					compact by cutting cell padding in half.
+				</p>
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Username</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>					
+					</tbody>				
+				</table>
+				
+			</div>
+		</div><!-- /.row -->
+		
+		<div class="row">
+			<div class="col-md-12">
+			
+			<h2>Contextual classes</h2>
+			<p>
+				Use contextual classes to color rows or individual cells.
+			</p>
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped">
+					<colgroup>
+						<col class="col-xs-1" />
+						<col class="col-xs-7" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th>Class</th>
+							<th>Description</thead>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>.active</code></td>
+							<td>Applies the hover color to a particular row or cell</td>
+						</tr>
+						<tr>
+							<td><code>.success</code></td>
+							<td>Indicates a successful or positive action</td>
+						</tr>		
+						<tr>
+							<td><code>.info</code></td>
+							<td>Indicates a neutral informative change or action</td>
+						</tr>
+						<tr>
+							<td><code>.warning</code></td>
+							<td>Indicates a warning that might need attention</td>
+						</tr>
+						<tr>
+							<td><code>.danger</code></td>
+							<td>Indicates a dangerous or potentially negative action</td>
+						</tr>						
+					</tbody>
+				</table>
+			</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Column heading</th>
+						<th>Column heading</th>
+						<th>Column heading</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="active">
+						<td>1</td>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>	
+					<tr class="success">
+						<td>3</td>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr class="info">
+						<td>5</td>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr class="warning">
+						<td>7</td>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>
+					<tr class="danger">
+						<td>9</td>
+						<td>Column content</td>
+						<td>Column content</td>
+						<td>Column content</td>
+					</tr>					
+				</tbody>
+			</table>
+			
+			</div>
+		</div><!-- /.row -->
+				
+	</div>
+	
+	<a name="bottom"></a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>	
+  </body>
+</html>
